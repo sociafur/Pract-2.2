@@ -12,11 +12,11 @@ double Step(double x,double a)
     {
         return 1 / (pow(2, x + a));
     }
-    if (5 < x && x < 8)
+    else if (5 < x && x < 8)
     {
         return tan(a * x);
     }
-    else
+    else if(x<5)
     {
         pow(a, x);
     }
@@ -24,14 +24,19 @@ double Step(double x,double a)
 }
 void StepAnalog(double x,double a)
 {
-    double result = Step(x, a);
+    double Y = Step(x, a);
     std::cout << std::fixed << std::setprecision(4);
-    std::cout << result << std::endl;
+    std::cout << "Y = "<<Y << std::endl;
     std::cin.get();
 }
 int main()
 {
-    StepAnalog(6,2);
+    std::cout << "Enter x"<<std::endl;
+    std::cin >> x;
+    std::cout << "Enter a" << std::endl;
+    std::cin >> a;
+    StepAnalog(x,a);
+    std::cin.get();
 }
 
 
